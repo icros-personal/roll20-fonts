@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roll20 Dice Font Test</title>
+  </head>
+  <body>
+    <h1>Roll20 dice-font diagnostic</h1>
+    <p class="note">
+      This page tests whether your browser can display Roll20's dice font, and
+      if not, narrows down why. It bundles Roll20's font for testing purposes
+      only (sorry, I'm trying to help).
+    </p>
+
+    <section class="panel">
+      <h2>What to send back</h2>
+      <ol>
+        <li>Wait a few seconds for the checks below to finish.</li>
+        <li>
+          Click <strong>Copy report</strong> and paste it to me (or copy the
+          text box manually).
+        </li>
+        <li>Take a screenshot of the whole page.</li>
+        <li>
+          Open the console (Ctrl+Shift+K), and copy anything mentioning
+          “downloadable font”.
+        </li>
+        <li>Tell me which browser add-ons you use (uBlock, NoScript, etc.).</li>
+      </ol>
+      <button id="copy">Copy report</button>
+      <textarea id="report" rows="8" readonly></textarea>
+    </section>
+
+    <section class="panel">
+      <h2>1. Automated checks</h2>
+      <p class="muted">
+        “Actually rendered?” compares the text's width against fallback fonts,
+        so it shows whether the font was really drawn, not just downloaded. The
+        probe font is a tiny self-made font (A = square, B = diamond, C =
+        triangle, D = ring).
+      </p>
+      <button id="run">Run checks again</button>
+      <div id="results" aria-live="polite"></div>
+    </section>
+
+    <section class="panel">
+      <h2>2. Visual samples</h2>
+      <p>
+        These should look like dice faces (Roll20 font) and simple shapes
+        (probe font). If you see ordinary letters, the font is not being used.
+      </p>
+      <div id="samples"></div>
+    </section>
+
+    <section class="panel">
+      <h2>3. Environment</h2>
+      <pre id="environment"></pre>
+    </section>
+
+    <script type="module" src="index.mjs"></script>
+  </body>
+</html>
